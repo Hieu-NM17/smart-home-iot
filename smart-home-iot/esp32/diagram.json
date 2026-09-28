@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "author": "NM.Hiếu",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": 20,
+      "left": 200,
+      "attrs": {
+        "temperature": "25",
+        "humidity": "60"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led",
+      "top": 150,
+      "left": 200,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "button",
+      "top": 150,
+      "left": 350,
+      "attrs": {
+        "color": "blue"
+      }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht22:VCC", "esp:3V3", "red", [] ],
+    [ "dht22:GND", "esp:GND.1", "black", [] ],
+    [ "dht22:SDA", "esp:4", "green", [] ],
+    [ "led:A", "esp:12", "green", [] ],
+    [ "led:C", "esp:GND.2", "black", [] ],
+    [ "button:1.l", "esp:13", "green", [] ],
+    [ "button:2.r", "esp:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}
