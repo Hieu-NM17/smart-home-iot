@@ -23,10 +23,6 @@ const char* SENSOR_TOPIC =
 const char* HUMIDITY_TOPIC =
     "home/living_room/humidity_01/sensor";
 
-// One status topic for the whole board. The payload lists the backend
-// device_ids that live on this board, so the backend can flip is_online for
-// all of them. STATUS_OFFLINE is the MQTT Last Will: the broker publishes it
-// if the ESP32 disappears without disconnecting.
 const char* STATUS_TOPIC =
     "home/living_room/esp32_smart_home/status";
 
@@ -294,4 +290,4 @@ void loop() {
     }
 
     delay(10);
-}
+}
